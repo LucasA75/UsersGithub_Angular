@@ -1,0 +1,15 @@
+<header class="bg-dark p-3 text-white shadow">
+    <app-header (nombreEmitido)="getUsers($event)"></app-header>
+</header>
+<main>
+   <!--  <i class="fa-solid fa-gear"></i> -->
+   <br>
+   <section>
+    <h1>Listado de Usuarios</h1>
+    <hr>
+    <ul *ngIf="userList.length != 0">
+        <li [routerLink]="['/user',user.login]"  *ngFor="let user of userList">{{user.login}} - {{user.id}}</li>
+    </ul>
+    <p *ngIf="userList.length == 0">No hay Usuarios :(</p>
+   </section>
+</main>
